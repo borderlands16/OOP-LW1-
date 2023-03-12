@@ -2,14 +2,14 @@
 
 class Program
 {
-    delegate bool IntPredicate(int n); // оголошення делегата
+    delegate bool IntPredicate(int n); 
 
     static void Main()
     {
         int[] numbers = { 3, 14, 21, 33, 56, 63, 72, 81, 91, 105 };
         IntPredicate divisibleBy3 = new IntPredicate(IsDivisibleBy3);
         IntPredicate divisibleBy7 = new IntPredicate(IsDivisibleBy7);
-        // передаємо делегати як аргументи методу FindNumbers
+        
         int[] divisibleBy3Numbers = FindNumbers(numbers, divisibleBy3);
         int[] divisibleBy7Numbers = FindNumbers(numbers, divisibleBy7);
         Console.WriteLine("Числа, що діляться на 3: {0}", string.Join(", ", divisibleBy3Numbers));
@@ -28,7 +28,7 @@ class Program
                 count++;
             }
         }
-        Array.Resize(ref result, count); // зменшуємо розмір масиву до кількості знайдених чисел
+        Array.Resize(ref result, count); 
         return result;
     }
 
